@@ -1,0 +1,7 @@
+%h1 Listing photos
+
+= @photos.each do |photo|
+  = photo.title
+  = image_tag photo.image_url() if photo.image?
+
+= link_to 'New Photo', new_photo_path

@@ -1,0 +1,3 @@
+%h1 Photo:
+= @photo.title
+= image_tag @photo.image_url() if @photo.image?
