@@ -1,3 +1,3 @@
 %h1 Photo:
 = @photo.title
-= image_tag @photo.image_url() if @photo.image?
+= image_tag @photo.image_url(:index) if @photo.image?

@@ -52,6 +52,18 @@ class PhotosController < ApplicationController
     end
   end
 
+  def upload_photos
+  end
+
+  def upload
+    @photo = Photo.new(image: params[:file])
+    parsed = Photo.parse_filename(params[:name])
+    @photo.title = parsed[:title]
+    if @photo.save
+      head 200
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
